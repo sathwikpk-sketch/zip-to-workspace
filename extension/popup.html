@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ZIP-to-Workspace</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <main>
+    <header>
+      <div class="logo">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M21 8L12 3 3 8v8l9 5 9-5V8z"></path>
+          <path d="M12 3v18"></path>
+          <path d="M12 12l9-5"></path>
+          <path d="M12 12L3 7"></path>
+        </svg>
+      </div>
+      <div class="header-text">
+        <h1>ZIP-to-Workspace</h1>
+        <p>Instant ZIP extraction & IDE launcher</p>
+      </div>
+    </header>
+
+    <section class="card toggle-card">
+      <div class="toggle-info">
+        <strong>Auto-extract ZIPs</strong>
+        <small>Automatically extract completed ZIP downloads</small>
+      </div>
+      <label class="switch">
+        <input id="autoExtract" type="checkbox">
+        <span class="slider"></span>
+      </label>
+    </section>
+
+    <section id="statusCard" class="card status-card">
+      <div id="statusHeader" class="status-header">
+        <span id="kindBadge" class="badge">READY</span>
+        <span id="timeBadge" class="time-badge"></span>
+      </div>
+      <h2 id="resultTitle">No recent extraction</h2>
+      <p id="resultMessage">Download a ZIP file in Chrome to auto-extract into your workspace.</p>
+      
+      <div id="pathContainer" class="path-box hidden">
+        <span id="pathText" class="path-text"></span>
+        <button id="copyPathBtn" class="icon-btn" title="Copy path">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+            <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+          </svg>
+        </button>
+      </div>
+
+      <div class="actions">
+        <button id="extractBtn" class="btn primary hidden">Extract Latest ZIP</button>
+        <button id="openFolderBtn" class="btn secondary hidden">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
+          Open Folder
+        </button>
+        <button id="openCodeBtn" class="btn secondary accent-btn hidden">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+          Open in VS Code
+        </button>
+      </div>
+    </section>
+
+    <footer>
+      <span>Local companion · code is never run automatically</span>
+      <button id="refreshBtn" class="text-btn">Refresh</button>
+    </footer>
+
+    <div id="errorBox" class="error-box hidden"></div>
+  </main>
+  <script src="popup.js"></script>
+</body>
+</html>

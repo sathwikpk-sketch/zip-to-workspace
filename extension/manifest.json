@@ -1,0 +1,29 @@
+{
+  "manifest_version": 3,
+  "name": "ZIP-to-Workspace",
+  "version": "0.1.0",
+  "minimum_chrome_version": "102",
+  "description": "Extract downloaded ZIP projects into a local workspace and optionally open them in a code editor.",
+  "permissions": [
+    "downloads",
+    "storage",
+    "nativeMessaging"
+  ],
+  "background": {
+    "service_worker": "service-worker.js"
+  },
+  "action": {
+    "default_title": "ZIP-to-Workspace",
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  }
+}

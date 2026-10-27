@@ -1,0 +1,26 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Local companion configuration/logs
+config.json
+companion.log
+*.log
+.env*
+!.env.example
+*.tmp
+
+# Build/test output
+dist/
+build/
+*.zip
+coverage/
+.pytest_cache/
+
+# IDE / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
